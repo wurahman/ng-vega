@@ -39,3 +39,5 @@ See
 - [Vega editor demo](http://kristw.github.io/ng-vega/editor.html) -- AngularJS version of the editor with syntax highlighting
 
 For more information about Vega, please refer to [vega documentation](http://trifacta.github.io/vega/) and the original [vega editor](http://trifacta.github.io/vega/editor/).
+
+Copyright (c) 2016 Krist Wongsuphasawat. MIT License

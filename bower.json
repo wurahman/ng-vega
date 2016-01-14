@@ -17,6 +17,7 @@
     "ng-vega",
     "angular-vega"
   ],
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",

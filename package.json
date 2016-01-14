@@ -23,7 +23,7 @@
     "Krist Wongsuphasawat <krist.wongz@gmail.com>",
     "eptify"
   ],
-  "license": "BSD",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kristw/ng-vega/issues"
   },
