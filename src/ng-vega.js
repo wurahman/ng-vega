@@ -1,19 +1,20 @@
 // Define module using Universal Module Definition pattern
-// https://github.com/umdjs/umd/blob/master/amdWeb.js
+// https://github.com/umdjs/umd/blob/master/returnExports.js
 
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // Support AMD. Register as an anonymous module.
-    // EDIT: List all dependencies in AMD style
     define(['angular', 'vega'], factory);
-  } else {
-    // No AMD. Set module as a global variable
-    // EDIT: Pass dependencies to factory function
+  }
+  else if (typeof exports === 'object') {
+    // Node/CommonJS
+    module.exports = factory(require('angular'), require('vega'));
+  }
+  else {
+    // Just define it in angular and done
     factory(root.angular, root.vg);
   }
-}(this,
-//EDIT: The dependencies are passed to this function
-function (angular, vg) {
+}(this, function (angular, vg) {
   //---------------------------------------------------
   // BEGIN code for this module
   //---------------------------------------------------
@@ -44,27 +45,39 @@ function (angular, vg) {
           renderer: '=vegaRenderer'
         },
         link: function(scope, elements, attrs) {
+          var element = elements[0];
           var view;
+          var processedData;
 
           function parse(){
             vg.parse.spec(scope.spec, function(chart) {
               view = chart({
-                el: elements[0],
-                data: scope.data,
+                el: element,
+                data: processedData,
                 renderer: scope.renderer || 'svg'
               }).update();
             });
           }
 
-          var debouncedParse = debounce(parse, 100);
+          var debouncedParse = debounce(parse, 50);
 
           scope.$watch('spec', debouncedParse, true);
 
           scope.$watch('data', function(data){
+            processedData = {};
+
+            if(angular.isDefined(data)){
+              Object.keys(data).forEach(function(key){
+                var value = data[key];
+                processedData[key] = angular.isFunction(value) ? value : function(dat){
+                  dat.remove(function(d){return true;})
+                    .insert(value);
+                };
+              });
+            }
+
             if(view){
-              view.data(data)
-                .update()
-                .render();
+              view.data(processedData).update();
             }
             else{
               debouncedParse();
@@ -73,8 +86,7 @@ function (angular, vg) {
 
           scope.$watch('renderer', function(renderer){
             if(view){
-              view.renderer(renderer)
-                .update();
+              view.renderer(renderer).update();
             }
             else{
               debouncedParse();
@@ -88,6 +100,3 @@ function (angular, vg) {
   // END code for this module
   //---------------------------------------------------
 }));
-
-
-
