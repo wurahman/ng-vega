@@ -22,7 +22,13 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "src",
+    "examples",
+    "docs",
+    "Gruntfile.js",
+    "grunt/*.js",
+    "package.json"
   ],
   "dependencies": {
     "d3": "~3.5.5",
