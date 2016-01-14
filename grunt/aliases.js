@@ -5,6 +5,7 @@ module.exports = {
       // Clean output directory
       'clean:dist',
       'copy:dist',
+      'copy:examples',
       // - minify the packaged javascript
       'uglify:dist'
     ]
