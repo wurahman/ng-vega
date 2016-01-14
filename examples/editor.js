@@ -29,13 +29,13 @@ angular.module('exampleEditor', ['ngVega', 'ui.ace'])
           "name": "x",
           "type": "ordinal",
           "range": "width",
-          "domain": {"data": "table", "field": "data.x"}
+          "domain": {"data": "table", "field": "x"}
         },
         {
           "name": "y",
           "range": "height",
           "nice": true,
-          "domain": {"data": "table", "field": "data.y"}
+          "domain": {"data": "table", "field": "y"}
         }
       ],
       "axes": [
@@ -46,18 +46,18 @@ angular.module('exampleEditor', ['ngVega', 'ui.ace'])
         {
           "type": "rect",
           "from": {"data": "table"},
-          "key": "data.x",
+          "key": "x",
           "properties": {
             "enter": {
-              "x": {"scale": "x", "field": "data.x"},
+              "x": {"scale": "x", "field": "x"},
               "width": {"scale": "x", "band": true, "offset": -1},
-              "y": {"scale": "y", "field": "data.y"},
+              "y": {"scale": "y", "field": "y"},
               "y2": {"scale": "y", "value": 0}
             },
             "update": {
-              "x": {"scale": "x", "field": "data.x"},
+              "x": {"scale": "x", "field": "x"},
               "width": {"scale": "x", "band": true, "offset": -1},
-              "y": {"scale": "y", "field": "data.y"},
+              "y": {"scale": "y", "field": "y"},
               "y2": {"scale": "y", "value": 0},
               "fill": {"value": "steelblue"}
             },
