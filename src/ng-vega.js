@@ -42,7 +42,8 @@
         scope: {
           spec: '=',
           data: '=vegaData',
-          renderer: '=vegaRenderer'
+          renderer: '=vegaRenderer',
+          onParse: '&vegaOnParse'
         },
         link: function(scope, elements, attrs) {
           var element = elements[0];
@@ -56,6 +57,7 @@
                 data: processedData,
                 renderer: scope.renderer || 'svg'
               }).update();
+              scope.onParse({view: view});
             });
           }
 
