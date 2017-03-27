@@ -19,12 +19,12 @@ angular.module('exampleApp', ['ngVega'])
 ```
 
 ```html
-<div vega spec="spec" vega-data="testData" vega-renderer="'svg'"></div>
+<div vega spec="spec" vega-data="testData" vega-renderer="'svg'" vega-on-parse="myCallback(view)"></div>
 ```
 
 - `spec` is `$scope.spec` in your controller.
 
-- `vega-data` (optional) can be used to pass dynamic data. In the example above, it is bound to `$scope.testData`. Data can be function to modify the values (Vega 2 syntax) or raw values (and ng-vega will convert it to function to make it work for you).
+- `vega-data` (optional) can be used to pass dynamic data. In the example above, it is bound to `$scope.testData`. Data can be a function to modify the values (Vega 2 syntax) or raw values (and ng-vega will convert it to a function to make it work for you).
 
 ```javascript
 $scope.testData = {
@@ -42,6 +42,19 @@ $scope.testData = {
 ```
 
 - `vega-renderer` (optional) can be used to set renderer (`'canvas'` or `'svg'`). Don't forget the quote.
+
+- `vega-on-parse` (optional) can be used to get notified when `spec` is parsed and to receive a handle to the [View Component](https://github.com/vega/vega/wiki/Runtime#view-component-api) that Vega has built for the corresponding chart. In the example above, this parameter is bound to `$scope.myCallback`.
+
+```javascript
+$scope.myCallback = function(view) {
+  // perform any work you need to do once the spec is parsed
+  console.log('Vega spec has been parsed.');
+  // make use of the View Component API as you wish
+  view.on('click', function(event, item) {
+    console.log('clicked on ' + JSON.stringify(item));
+  });
+};
+```
 
 ### Installation
 
