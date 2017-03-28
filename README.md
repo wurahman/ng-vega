@@ -1,4 +1,4 @@
-#ng-vega
+# ng-vega
 
 [![NPM version][npm-image]][npm-url]
 
