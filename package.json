@@ -1,6 +1,6 @@
 {
   "name": "ng-vega",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "Angular directive for rendering vega specs",
   "main": "dist/ng-vega.min.js",
   "scripts": {
