@@ -1,7 +1,7 @@
 # ng-vega
 
 ## v1.4.0
-- Add `vega-on-parse` attribute to the `vega` directive. See more information from pull request [#3](https://github.com/kristw/ng-vega/pull/3). Thanks @mhuyck
+- Add `vega-on-parse` attribute to the `vega` directive. See more information from pull request [#3](https://github.com/kristw/ng-vega/pull/3). Thanks @[mhuyck](https://github.com/mhuyck)
 
 ## v1.3.1-1.3.2
 - Add unnecessary files to ignore list for bower and npm.
