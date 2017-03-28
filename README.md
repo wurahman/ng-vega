@@ -1,4 +1,5 @@
-#ng-vega [![NPM version][npm-image]][npm-url]
+#ng-vega
+[![NPM version][npm-image]][npm-url]
 
 Angular directive for rendering [Vega](http://vega.github.io/) specs.
 This project was forked and modified from [angular-vega](https://github.com/eptify/angular-vega) which was written for Vega 1 and became inactive.
