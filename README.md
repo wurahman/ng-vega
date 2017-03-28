@@ -1,4 +1,5 @@
 #ng-vega
+
 [![NPM version][npm-image]][npm-url]
 
 Angular directive for rendering [Vega](http://vega.github.io/) specs.
