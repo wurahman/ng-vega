@@ -1,5 +1,4 @@
-ng-vega
-------------
+#ng-vega [![NPM version][npm-image]][npm-url]
 
 Angular directive for rendering [Vega](http://vega.github.io/) specs.
 This project was forked and modified from [angular-vega](https://github.com/eptify/angular-vega) which was written for Vega 1 and became inactive.
@@ -37,7 +36,7 @@ $scope.testData = {
 
 $scope.testData = {
   // raw values for dataset name "table"
-  table: [{a: 1},{a: 2}] 
+  table: [{a: 1},{a: 2}]
 }
 ```
 
@@ -74,7 +73,7 @@ Angular module `ngVega` will be available once you do one of the following:
 
 ##### Choice 1. Global
 
-Adding this library via ```<script>``` tag is the simplest way. 
+Adding this library via ```<script>``` tag is the simplest way.
 
 ```html
 <script src="path/to/angular.js"></script>
@@ -111,3 +110,6 @@ Krist Wongsuphasawat / [@kristw](https://twitter.com/kristw)
 
 
 Copyright (c) 2016 Krist Wongsuphasawat. MIT License
+
+[npm-image]: https://badge.fury.io/js/ng-vega.svg
+[npm-url]: https://npmjs.org/package/ng-vega
