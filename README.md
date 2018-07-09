@@ -1,6 +1,6 @@
 # ng-vega [![NPM version][npm-image]][npm-url]
 
-Angular directive for rendering [Vega](http://vega.github.io/) specs.
+Angular directive for rendering [Vega](http://vega.github.io/) specs. This is wajih's clone which will attempt to upgrade the vega version
 This project was forked and modified from [angular-vega](https://github.com/eptify/angular-vega) which was written for Vega 1 and became inactive.
 The current version of ng-vega supports Vega 2.
 
